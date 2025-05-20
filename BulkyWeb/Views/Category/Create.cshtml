@@ -1,32 +1,35 @@
 ﻿@model Category
 
-<form method="post">
-	<div class="border p-3">
+<div class="card shadow">
+	<div class="card-header bg-primary bg-gradient">
 		<div class="row">
-			<h2 class="text-primary">Create Category</h2>
+			<h2 class="text-white text-center">Create Category</h2>
 		</div>
-		<div asp-validation-summary="All" class="text-danger"></div>
-		<div class="row p-1">
-			<label asp-for="Name" ></label>
-			<input asp-for="Name" class="form-control" />
-			<span asp-validation-for="Name" class="text-danger"></span>
-		</div>
-		<div class="row p-1">
-			<label asp-for="DisplayOrder"></label>
-			<input asp-for="DisplayOrder" class="form-control" />
-			<span asp-validation-for="DisplayOrder" class="text-danger"></span>
-		</div>
-		<div class="row mt-3">
-			<div class="col-6">
-				<button type="submit" class="btn btn-primary form-control">Create</button>
-			</div>
-			<div class="col-6">
-				<a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control">Return to List</a>
-			</div>
-		</div>
-		
 	</div>
-</form>
+	<div class="card-body">
+		<form method="post">
+			<div asp-validation-summary="All" class="text-danger"></div>
+			<div class="row mb-3 px-3">
+				<label asp-for="Name"></label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div class="row mb-3 px-3">
+				<label asp-for="DisplayOrder"></label>
+				<input asp-for="DisplayOrder" class="form-control" />
+				<span asp-validation-for="DisplayOrder" class="text-danger"></span>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<button type="submit" class="btn btn-success form-control">Create</button>
+				</div>
+				<div class="col-6">
+					<a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control">Return to List</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 
 @section Scripts{
 	@{

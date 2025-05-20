@@ -1,26 +1,29 @@
 ﻿@model Category
 
-<form method="post">
-	<div class="border p-3">
+<div class="card shadow">
+	<div class="card-header bg-primary bg-gradient">
 		<div class="row">
-			<h2 class="text-primary">Delete Category</h2>
+			<h2 class="text-white text-center">Delete Category</h2>
 		</div>
-		<div class="row p-1">
-			<label asp-for="Name"></label>
-			<input asp-for="Name" disabled class="form-control" />
-		</div>
-		<div class="row p-1">
-			<label asp-for="DisplayOrder"></label>
-			<input asp-for="DisplayOrder" disabled class="form-control" />
-		</div>
-		<div class="row mt-3">
-			<div class="col-6">
-				<button type="submit" class="btn btn-danger form-control">Delete</button>
-			</div>
-			<div class="col-6">
-				<a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control">Return to List</a>
-			</div>
-		</div>
-
 	</div>
-</form>
+	<div class="card-body">
+		<form method="post">
+			<div class="row mb-3 px-3">
+				<label asp-for="Name"></label>
+				<input asp-for="Name" disabled class="form-control" />
+			</div>
+			<div class="row mb-3 px-3">
+				<label asp-for="DisplayOrder"></label>
+				<input asp-for="DisplayOrder" disabled class="form-control" />
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<button type="submit" class="btn btn-danger form-control">Delete</button>
+				</div>
+				<div class="col-6">
+					<a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control">Return to List</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

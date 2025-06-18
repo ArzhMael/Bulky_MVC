@@ -1,6 +1,6 @@
 ﻿@model List<Category>
 
-<div class="card shadow">
+<div class="card shadow rounded-top overflow-hidden">
 	<div class="card-header bg-primary bg-gradient">
 		<div class="row">
 			<h2 class="text-white text-center">Category List</h2>
@@ -17,7 +17,7 @@
 						Display Order
 					</th>
 					<th class="text-end col-3">
-						<a asp-controller="Category" asp-action="Create" class="btn btn-success" style="width:265px">
+						<a asp-controller="Category" asp-action="Create" class="btn btn-success rounded" style="width:260px">
 							<i class="bi bi-plus-square"></i> Create New Category
 						</a>
 					</th>
@@ -30,8 +30,11 @@
 						<td>@obj.Name</td>
 						<td>@obj.DisplayOrder</td>
 						<td class="text-end">
-							<a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-warning" style="width:130px"><i class="bi bi-pencil-square"></i> Edit</a>
-							<a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger" style="width:130px"><i class="bi bi-trash-fill"></i> Delete</a>
+							<div class="btn-group" role="group">
+								<a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-warning rounded-start" style="width:130px"><i class="bi bi-pencil-square"></i> Edit</a>
+								<a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger rounded-end" style="width:130px"><i class="bi bi-trash-fill"></i> Delete</a>
+							</div>
+							
 						</td>
 					</tr>
 				}
